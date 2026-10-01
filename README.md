@@ -54,9 +54,9 @@ This section shows example images demonstrating LR-Comfy's (**i.e. comfy's**) ca
 Install this plugin like any other Lightroom Classic plugin
 
 1. Download or clone the git repository
-2. Keep `lr-comfy.lrdevplugin`, `workflowsProcess`, and `workflowsCaption` together.
+2. Keep `lr-comfy.lrplugin`, `workflowsProcess`, and `workflowsCaption` together.
 3. In Lightroom Classic, open **File > Plug-in Manager**.
-4. Select **Add**, choose `lr-comfy.lrdevplugin`, and enable it.
+4. Select **Add**, choose `lr-comfy.lrplugin`, and enable it.
 5. Open **Settings** from the plug-in menu and enter the ComfyUI server URL and API key if required.
 
 The default URL is `http://localhost:8188` for a comfyui desktop installation running on the local machine.
