@@ -7,7 +7,7 @@ LR-Comfy is a Lightroom Classic plug-in for sending selected photos to ComfyUI f
 The plugin makes available two types of AI processing tasks:
 
 - **Image Process** runs a workflow to process an image and import the newly generated image back into into lightroom.
-- **Image Caption** runs a workflow that saves outputed text from the workflow into the Caption field of the selected image.
+- **Image Caption** runs a workflow that saves text from the workflow into the Caption field of the selected image.
 
 
 ## Warning
@@ -15,7 +15,7 @@ The plugin makes available two types of AI processing tasks:
 - Take a catalog backup before testing new workflows.
 - This plugin comes with no warranty at all.
 - Please read the instructions before using it.
-- This plugin has been developed and tested on Lightroom Classic 13 running on Windows 11. It may not work with other versions or operative systems.
+- This plugin has been developed and tested on Lightroom Classic 13 running on Windows 11. It may not work with other versions or operative systems. (The program has a dependency on exiftool.exe but there is a cross platform Perl version of exiftool)
 - The plugin has been tested with a local ComfyUI Desktop implementation. Code has been added to support comfy cloud servers but this has not been tested as the free comfyui cloud accounts dont allow API access.
 
 
@@ -96,6 +96,8 @@ If a ComfyUI job is still running after 10 minutes, the plug-in offers **Continu
 Export workflows from ComfyUI in **API format**, not the regular UI workflow format. The plug-in changes the first `LoadImage` node to use the uploaded filename.
 
 The files in both workflow folders are examples. Check their custom-node requirements by loading them manually into ComfyUI before running them via the plugin. When creating or editing a workflow, export the updated API version into the appropriate folder.
+
+Note the provided workflows leave copies of images in the comfy input and output directories which are under `%AppData%\Local\Comfy-Desktop\ComfyUI-Shared` on MS windows. You will need to manually delete these once in a while!!!
 
 ## Metadata
 
