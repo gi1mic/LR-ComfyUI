@@ -1,0 +1,57 @@
+{
+  "3": {
+    "inputs": {
+      "image": "unknown-04.jpg-0001.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "17": {
+    "inputs": {
+      "mode": "caption",
+      "question": "",
+      "min_length": 6,
+      "max_length": 128,
+      "num_beams": 5,
+      "no_repeat_ngram_size": 3,
+      "early_stopping": false,
+      "images": [
+        "3",
+        0
+      ],
+      "blip_model": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "BLIP Analyze Image",
+    "_meta": {
+      "title": "BLIP Analyze Image"
+    }
+  },
+  "22": {
+    "inputs": {
+      "blip_model": "Salesforce/blip-image-captioning-base",
+      "vqa_model_id": "Salesforce/blip-vqa-base",
+      "device": "cuda"
+    },
+    "class_type": "BLIP Model Loader",
+    "_meta": {
+      "title": "BLIP Model Loader"
+    }
+  },
+  "23": {
+    "inputs": {
+      "source": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "Preview as Text"
+    }
+  }
+}

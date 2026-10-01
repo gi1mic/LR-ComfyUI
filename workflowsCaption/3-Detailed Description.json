@@ -1,0 +1,72 @@
+{
+  "1": {
+    "inputs": {
+      "image": "Scan-070709-0102-edit.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "model": "gokaygokay/Florence-2-Flux-Large",
+      "precision": "fp16",
+      "convert_to_safetensors": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text_input": "",
+      "task": "more_detailed_caption",
+      "fill_mask": true,
+      "keep_model_loaded": false,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": 277203737470752,
+      "image": [
+        "1",
+        0
+      ],
+      "florence2_model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "The image shows a man and a child in a backyard. The man is wearing an orange shirt and black pants, and he is bending down to pick up something from the ground. The child is wearing an orange jumpsuit and is standing in front of a metal baby walker. The walker is placed on a concrete floor. In the background, there is a wooden house with a window and a grill. There is also a table with a red and white checkered tablecloth. The sky is blue and there are some trees visible in the background. The image appears to be taken from a low angle, looking up at the man and the child.",
+      "anything": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "ApiTextOutputNode",
+    "_meta": {
+      "title": "➡️ API Text Output"
+    }
+  }
+}
