@@ -51,6 +51,12 @@ This section shows example images demonstrating LR-Comfy's (**i.e. comfy's**) ca
 
 ## Installation
 
+### Comfy Desktop (not required if you are using cloud services)
+Install comfy desktop `https://comfy.org/` and enable developer mode in the setting page (this enables local network API support). 
+
+I recommend openning the provided JSON workflows using comfy desktop to verify there are no missing dependencies. 
+
+### Plugin
 Install this plugin like any other Lightroom Classic plugin
 
 1. Download or clone the git repository
@@ -60,6 +66,7 @@ Install this plugin like any other Lightroom Classic plugin
 5. Open **Settings** from the plug-in menu and enter the ComfyUI server URL and API key if required.
 
 The default URL is `http://localhost:8188` for a comfyui desktop installation running on the local machine.
+
 
 ## Image Process
 
